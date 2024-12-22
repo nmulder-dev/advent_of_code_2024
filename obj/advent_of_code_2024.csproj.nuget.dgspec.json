@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nick/Source/advent_of_code_2024/advent_of_code_2024.csproj": {}
+    "c:\\Users\\Nick\\source\\repos\\advent_of_code_2024\\advent_of_code_2024.csproj": {}
   },
   "projects": {
-    "/Users/nick/Source/advent_of_code_2024/advent_of_code_2024.csproj": {
+    "c:\\Users\\Nick\\source\\repos\\advent_of_code_2024\\advent_of_code_2024.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nick/Source/advent_of_code_2024/advent_of_code_2024.csproj",
+        "projectUniqueName": "c:\\Users\\Nick\\source\\repos\\advent_of_code_2024\\advent_of_code_2024.csproj",
         "projectName": "advent_of_code_2024",
-        "projectPath": "/Users/nick/Source/advent_of_code_2024/advent_of_code_2024.csproj",
-        "packagesPath": "/Users/nick/.nuget/packages/",
-        "outputPath": "/Users/nick/Source/advent_of_code_2024/obj/",
+        "projectPath": "c:\\Users\\Nick\\source\\repos\\advent_of_code_2024\\advent_of_code_2024.csproj",
+        "packagesPath": "C:\\Users\\Nick\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\Nick\\source\\repos\\advent_of_code_2024\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/nick/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Nick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
