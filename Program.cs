@@ -8,6 +8,7 @@ class Program
         Day1Part1();
         Day1Part2();
         Day2Part1();
+        Day2Part2();
     }
 
     static void Day1Part1()
@@ -94,7 +95,54 @@ class Program
         foreach (string line in levelLines)
         {
             int[] levels = line.Split(" ").Select(int.Parse).ToArray();
-            int lenght = levels.Length;
+            int length = levels.Length;
+            bool safe = true;
+            string changeType = "";
+
+            for (int i = 1; i < length; i++)
+            {
+                int value = levels[i - 1] - levels[i];
+                int delta = Math.Abs(value);
+
+                // Change too great, unsafe
+                if (delta == 0 || delta > 3)
+                {
+                    safe = false;
+                    break;
+                }
+
+                if (value < 0)
+                {
+                    // Change in direction, unsafe
+                    if (changeType == "decrease")
+                    {
+                        safe = false;
+                        break;
+                    }
+                    changeType = "increase";
+                }
+                else if (value > 0)
+                {
+                    // Change in direction, unsafe
+                    if (changeType == "increase")
+                    {
+                        safe = false;
+                        break;
+                    }
+                    changeType = "decrease";
+                }
+                else
+                {
+                    // No change in direction. unsafe
+                    safe = false;
+                    break;
+                }
+            }
+            if (safe)
+                safeCount++;
         }
+        Console.WriteLine($"Safe count is {safeCount}");
     }
+
+    static void Day2Part2() { }
 }
