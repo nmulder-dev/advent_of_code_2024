@@ -7,6 +7,7 @@ class Program
         Console.WriteLine("Hello, Adevnt of Code 2024!!");
         Day1Part1();
         Day1Part2();
+        Day2Part1();
     }
 
     static void Day1Part1()
@@ -81,5 +82,19 @@ class Program
             count = 0;
         }
         Console.WriteLine($"Total score is {score}");
+    }
+
+    static void Day2Part1()
+    {
+        int safeCount = 0;
+
+        Console.WriteLine("Day 2: Part 1");
+        string[] levelLines = File.ReadAllLines("../../../input2.txt");
+
+        foreach (string line in levelLines)
+        {
+            int[] levels = line.Split(" ").Select(int.Parse).ToArray();
+            int lenght = levels.Length;
+        }
     }
 }
