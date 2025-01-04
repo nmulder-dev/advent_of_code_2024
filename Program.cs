@@ -144,5 +144,67 @@ class Program
         Console.WriteLine($"Safe count is {safeCount}");
     }
 
-    static void Day2Part2() { }
+    static void Day2Part2()
+    {
+        int safeCount = 0;
+
+        Console.WriteLine("Day 2: Part 2");
+        string[] levelLines = File.ReadAllLines("../../../input2.txt");
+
+        foreach (string line in levelLines)
+        {
+            int[] levels = line.Split(" ").Select(int.Parse).ToArray();
+            bool safe = isSafe(levels);
+            if (safe)
+                safeCount++;
+        }
+        Console.WriteLine($"Safe count is {safeCount}");
+    }
+
+    private static bool isSafe(int[] levels)
+    {
+        bool safe = true;
+        string changeType = "";
+
+        for (int i = 1; i < levels.Length; i++)
+        {
+            int value = levels[i - 1] - levels[i];
+            int delta = Math.Abs(value);
+
+            // Change too great, unsafe
+            if (delta == 0 || delta > 3)
+            {
+                safe = false;
+                break;
+            }
+
+            if (value < 0)
+            {
+                // Change in direction, unsafe
+                if (changeType == "decrease")
+                {
+                    safe = false;
+                    break;
+                }
+                changeType = "increase";
+            }
+            else if (value > 0)
+            {
+                // Change in direction, unsafe
+                if (changeType == "increase")
+                {
+                    safe = false;
+                    break;
+                }
+                changeType = "decrease";
+            }
+            else
+            {
+                // No change in direction. unsafe
+                safe = false;
+                break;
+            }
+        }
+        return safe;
+    }
 }
